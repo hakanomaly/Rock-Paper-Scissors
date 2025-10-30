@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+1- Write a function that randomly returns “rock”, “paper” or “scissors”. (math.random)
+2- Write a function that takes the user choice and returns it. (Use the prompt method)
+3- Write variables to keep track of the players score. 
+4- Write the logic to play a single round
+5- Write the logic to play the entire game
+
+1.1 - 
+
+
+
+
+
+
+-->
+
+
+
+
+
+
+    
+<script>
+
+/* 
+
+
+
+
+
+
+*/
+
+function getComputerChoice(){
+    const r = Math.random();
+
+
+  if (r < 1/3) {
+    return "rock";
+  } else if (r < 2/3) {
+    return "paper";
+  } else {
+    return "scissors";
+  }
+}
+
+
+
+function getHumanChoice() {
+  return prompt("Make Your Choice! :");
+}
+
+
+
+
+let HumanScore = 0;
+let ComputerScore = 0;
+let tieScore = 0;
+
+let roundCount = (HumanScore+ComputerScore+tieScore);
+
+function playRound(humanChoice,computerChoice){
+ if (humanChoice.toLowerCase() === computerChoice){
+    tieScore ++;
+    return "it's a tie!";
+ } else if ( 
+    (humanChoice.toLowerCase() === "rock" && computerChoice === "scissors")||
+    (humanChoice.toLowerCase() === "paper" && computerChoice === "rock") ||
+    (humanChoice.toLowerCase() === "scissors" && computerChoice === "paper")
+){
+HumanScore++;
+return "You win!";
+   
+ }
+else {
+    ComputerScore++;
+    return "Computer wins!"
+}
+
+}
+
+// Round 1
+const human1 = getHumanChoice();
+const computer1 = getComputerChoice();
+console.log("Your Choice:",(human1),"Computer Choice:",(computer1));
+console.log("Round 1:", playRound(human1, computer1));
+console.log(`Score → You: ${HumanScore} | Computer: ${ComputerScore} | Tie: ${tieScore}`);
+
+// Round 2
+const human2 = getHumanChoice();
+const computer2 = getComputerChoice();
+console.log("Your Choice:",(human2),"Computer Choice:",(computer2));
+console.log("Round 2:", playRound(human2, computer2));
+console.log(`Score → You: ${HumanScore} | Computer: ${ComputerScore} | Tie: ${tieScore}`);
+
+// Round 3
+const human3 = getHumanChoice();
+const computer3 = getComputerChoice();
+console.log("Your Choice:",(human3),"Computer Choice:",(computer3));
+console.log("Round 3:", playRound(human3, computer3));
+console.log(`Score → You: ${HumanScore} | Computer: ${ComputerScore} | Tie: ${tieScore}`);
+
+// Round 4
+const human4 = getHumanChoice();
+const computer4 = getComputerChoice();
+console.log("Your Choice:",(human4),"Computer Choice:",(computer4));
+console.log("Round 4:", playRound(human4, computer4));
+console.log(`Score → You: ${HumanScore} | Computer: ${ComputerScore} | Tie: ${tieScore}`);
+
+// Round 5
+const human5 = getHumanChoice();
+const computer5 = getComputerChoice();
+console.log("Your Choice:",(human5),"Computer Choice:",(computer5));
+console.log("Round 5:", playRound(human5, computer5));
+console.log(`Score → You: ${HumanScore} | Computer: ${ComputerScore} | Tie: ${tieScore}`);
+
+// Oyun bitti, kazananı göster
+console.log(playGame());
+
+function playGame() {
+    if (ComputerScore > HumanScore) {
+        return "Computer Wins!";
+    } else if (HumanScore > ComputerScore) {
+        return "You Win!";
+    } else {
+        return "It's a tie!";
+    }
+}
+
+
+
+</script>    
+</body>
+</html>
